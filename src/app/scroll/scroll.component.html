@@ -1,0 +1,7 @@
+<!-- scroll div -->
+<div class="div-set" [style.height]="height+'px'" (scroll)="wheelChange($event)">
+  <ul>
+    <li *ngFor="let item of list | slice:start:end">{{item}}</li>
+  </ul>
+</div>
+<!-- end -->
