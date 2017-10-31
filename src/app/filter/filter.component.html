@@ -1,0 +1,17 @@
+<div class="panel panel-info div-top">
+  <div class="panel-heading">
+    <h3 class="panel-title">filter</h3>
+  </div>
+  <div class="panel-body">
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">关键字搜索</span>
+      <input type="text" [(ngModel)]="inputVal"  class="form-control" aria-describedby="basic-addon1">
+    </div>
+    <ul class="list-group">
+      <!-- label是需要过滤的属性 -->
+      <li class="list-group-item no-bd-radius" *ngFor="let item of list | filter:inputVal:'label';">
+        {{item.label}}
+      </li>
+    </ul>
+  </div>
+</div>

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ScrollModule } from './scroll/scroll.module';
+import { FilterModule } from './filter/filter.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { ScrollModule } from './scroll/scroll.module';
   ],
   imports: [
     BrowserModule,
-    ScrollModule
+    ScrollModule,
+    FilterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
