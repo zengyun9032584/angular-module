@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   public list = [];
+  public name = 'zengyun';
 
   ngOnInit() {
     // 初始list数量

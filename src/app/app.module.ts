@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ScrollModule } from './scroll/scroll.module';
 import { FilterModule } from './filter/filter.module';
+import { DirectiveModule } from './directive/directive.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { FilterModule } from './filter/filter.module';
   imports: [
     BrowserModule,
     ScrollModule,
-    FilterModule
+    FilterModule,
+    DirectiveModule
   ],
   providers: [],
   bootstrap: [AppComponent]
