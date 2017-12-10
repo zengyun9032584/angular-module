@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { ScrollModule } from './scroll/scroll.module';
-import { FilterModule } from './filter/filter.module';
-import { DirectiveModule } from './directive/directive.module';
+import { RootRouteModule } from './route/route.module';
 
 @NgModule({
   declarations: [
@@ -12,11 +11,9 @@ import { DirectiveModule } from './directive/directive.module';
   ],
   imports: [
     BrowserModule,
-    ScrollModule,
-    FilterModule,
-    DirectiveModule
+    RootRouteModule
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

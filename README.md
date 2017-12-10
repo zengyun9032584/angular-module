@@ -1,6 +1,6 @@
 # ScrollLoad
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.0.The project Based on Angular 5.1.0.I'm recorded some modules when I use Angular,each focused on a feature area.You can see online demo [scrollLoad](https://www.lianyijinxiu.xin:3600)
 
 ## Development server
 
@@ -23,6 +23,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 Before running the tests make sure you are serving the app via `ng serve`.
 
-## Further help
+## Contributing
+You can submit any ideas as pull request，or as GitHub issues。
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

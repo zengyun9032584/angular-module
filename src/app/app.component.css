@@ -1,0 +1,78 @@
+.no-margin {
+  padding: 0;
+}
+
+.back-color {
+  transition: opacity .5s;
+  background: #fff;
+}
+
+.div-height {
+  height: 80px;
+  margin-bottom: 2px;
+}
+
+.div-icon {
+  height: 100%;
+}
+
+.icon {
+  font-size: 35px;
+  color: #4aa2e0;
+  position: absolute;
+  top: 20px;
+  left: 5px;
+}
+
+.span-title {
+  position: absolute;
+  top: 25px;
+  left: 46px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #4aa2e0;
+}
+
+.div-nav {
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-width: 260px;
+  box-shadow: 6px 0 6px rgba(0, 0, 0, .5);
+  height: calc(100vh - 175px);
+}
+
+.div-route {
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-width: 260px;
+  box-shadow: 6px 0 6px rgba(0, 0, 0, .5);
+  height: calc(100vh - 175px);
+}
+
+.footer {
+  position: absolute;
+  height: 80px;
+  bottom: 0;
+}
+
+.ul-margin {
+  margin-top: 10px;
+}
+
+.list-style {
+  margin-bottom: 0;
+  border: 0;
+  border-radius: 5px;
+  border-bottom: 1px solid #88888c;
+}
+
+.svg-style {
+  width: 20px;
+}
+
+.a-loc {
+  position: absolute;
+  left: 40px;
+  top: 27px;
+}
+

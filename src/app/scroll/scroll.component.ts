@@ -20,6 +20,12 @@ export class ScrollComponent implements OnInit {
     }
   }
 
+  /**
+   *
+   * 滑动滚动条时触发，到达底部后控制ngFor追加数据
+   * @param {*} event
+   * @memberof ScrollComponent
+   */
   wheelChange(event: any) {
     // 获取滚动条滚动高度
     const scrollTop = event.target.scrollTop;
