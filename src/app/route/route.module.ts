@@ -23,6 +23,10 @@ const route: Routes = [
     {
         path: 'async-service',
         loadChildren: '../service/service.module#ServiceModule'
+    },
+    {
+        path: '**',
+        redirectTo: '/scroll-load',
     }
 ];
 
