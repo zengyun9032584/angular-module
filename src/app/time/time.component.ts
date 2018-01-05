@@ -48,7 +48,7 @@ export class TimeComponent implements OnInit, OnDestroy {
         if (this.hour === 23) {
           this.hour = 0;
           // 当时间归0，重新获取日期
-          this.http.get('https://www.lianyijinxiu.xin:8081/getDate?param=all').subscribe((result: any) => {
+          this.http.get('http://localhost:8081/getDate?param=all').subscribe((result: any) => {
             this.date = result.date;
           });
         }
