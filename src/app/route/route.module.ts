@@ -25,6 +25,10 @@ const route: Routes = [
         loadChildren: '../service/service.module#ServiceModule'
     },
     {
+        path: 'time',
+        loadChildren: '../time/time.module#TimeModule'
+    },
+    {
         path: '**',
         redirectTo: '/scroll-load',
     }

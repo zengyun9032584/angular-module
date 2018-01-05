@@ -15,7 +15,7 @@ export class AsyncService {
      */
     async getData(): Promise<any> {
         // 后端http地址
-        const url = 'https://www.lianyijinxiu.xin:8081/list';
+        const url = 'http://localhost:8081/list';
         const result = await this.httpClient.get(url).toPromise();
         return result;
     }
