@@ -45,7 +45,7 @@ export class TimeComponent implements OnInit, OnDestroy {
       if (this.minute === 60) {
         this.minute = 0;
         this.hour++;
-        if (this.hour === 23) {
+        if (this.hour === 24) {
           this.hour = 0;
           // 当时间归0，重新获取日期
           this.http.get('http://localhost:8081/getDate?param=date').subscribe((result: any) => {
@@ -57,7 +57,13 @@ export class TimeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subscribe.unsubscribe();
+    try {
+      if (this.subscribe) {
+        this.subscribe.unsubscribe();
+      }
+    } catch (err) {
+      console.log(err);
+    }
   }
 
 }
