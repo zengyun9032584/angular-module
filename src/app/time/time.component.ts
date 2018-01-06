@@ -1,11 +1,13 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, ApplicationRef } from '@angular/core';
 import { Observable } from 'rxjs/rx';
 import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-time',
   templateUrl: './time.component.html',
-  styleUrls: ['./time.component.css']
+  styleUrls: ['./time.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TimeComponent implements OnInit, OnDestroy {
   obserStream: Observable<any>;    // 统计每秒计时
@@ -14,7 +16,7 @@ export class TimeComponent implements OnInit, OnDestroy {
   hour = 0;    // 保存当前时间的时针
   minute = 0;    // 保存当前时间的分针
   second = 0;    // 保存当前时间的秒针
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private cdref: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.http.get('http://localhost:8081/getDate?param=all').subscribe((result: any) => {
@@ -22,6 +24,8 @@ export class TimeComponent implements OnInit, OnDestroy {
       this.date = result.date.replace(/-/g, '/');
       // 获取时间
       [this.hour, this.minute, this.second] = result.time.split(':').map(value => Number(value));
+      // 手动更新模板
+      this.cdref.markForCheck();
       // 设置时钟
       this.obserStream = Observable.timer(0, 1000);
       this.subscribe = this.obserStream.subscribe(() => {
@@ -50,10 +54,12 @@ export class TimeComponent implements OnInit, OnDestroy {
           // 当时间归0，重新获取日期
           this.http.get('http://localhost:8081/getDate?param=date').subscribe((result: any) => {
             this.date = result.date;
+            this.cdref.markForCheck();
           });
         }
       }
     }
+    this.cdref.markForCheck();
   }
 
   ngOnDestroy() {
