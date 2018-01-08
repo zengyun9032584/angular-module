@@ -1,10 +1,10 @@
 .div-top {
   margin: 50px 50px;
-  width:400px;
-  height:350px;
-  overflow-y:auto;
+  width: 400px;
+  height: 350px;
+  overflow-y: auto;
 }
 
-.no-bd-radius{
-    border-radius: 0;
+.no-bd-radius {
+  border-radius: 0;
 }

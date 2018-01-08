@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ *
+ * 滚动加载demo
+ * @export
+ * @class DemoComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-demo',
   templateUrl: './demo.component.html',

@@ -19,4 +19,4 @@ import { FilterPipe } from './pipe/filter.pipe';
   exports: [FilterComponent],
   declarations: [FilterPipe, FilterComponent]
 })
-export class FilterModule {}
+export class FilterModule { }

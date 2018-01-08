@@ -1,8 +1,15 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, ApplicationRef } from '@angular/core';
-import { Observable } from 'rxjs/rx';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/timer';
 import { HttpClient } from '@angular/common/http';
 
-
+/**
+ * 定义时钟组件
+ * @export
+ * @class TimeComponent
+ * @implements {OnInit}
+ * @implements {OnDestroy}
+ */
 @Component({
   selector: 'app-time',
   templateUrl: './time.component.html',
@@ -39,7 +46,7 @@ export class TimeComponent implements OnInit, OnDestroy {
   /**
    *
    * 判断秒针，分针，时针是否超出计时
-   * @param {number} second
+   * @param {number} second 当前秒针值
    * @memberof TimeComponent
    */
   checkTimeOver(second: number) {
@@ -62,6 +69,11 @@ export class TimeComponent implements OnInit, OnDestroy {
     this.cdref.markForCheck();
   }
 
+  /**
+   *
+   * 销毁组件是取消timer订阅
+   * @memberof TimeComponent
+   */
   ngOnDestroy() {
     try {
       if (this.subscribe) {

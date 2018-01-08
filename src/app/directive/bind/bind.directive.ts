@@ -1,7 +1,12 @@
 import { Directive, ElementRef, Input, Output, HostListener, EventEmitter, OnChanges } from '@angular/core';
 
-// 实现可编辑div的双向绑定
-// html --> <div contenteditable="true" [(appDataBind)]="name"></div>
+/**
+ *
+ * 实现可编辑div的双向绑定
+ * @export
+ * @class BindDirective
+ * @implements {OnChanges}
+ */
 @Directive({
   selector: '[appDataBind]'
 })
@@ -14,6 +19,12 @@ export class BindDirective implements OnChanges {
   constructor(private elementRef: ElementRef) {
   }
 
+  /**
+   *
+   * 当model值改变时同时改变dom中的值
+   * @param {any} changes Input改变的内容
+   * @memberof BindDirective
+   */
   ngOnChanges(changes) {
     if (changes.model.isFirstChange()) {
       // 初始化赋值给html

@@ -1,5 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+/**
+ *
+ * 定义滚动加载组件
+ * @export
+ * @class ScrollComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-scroll',
   templateUrl: './scroll.component.html',
@@ -23,7 +30,7 @@ export class ScrollComponent implements OnInit {
   /**
    *
    * 滑动滚动条时触发，到达底部后控制ngFor追加数据
-   * @param {*} event
+   * @param {*} event 当前dom节点
    * @memberof ScrollComponent
    */
   wheelChange(event: any) {

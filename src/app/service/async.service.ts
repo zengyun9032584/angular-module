@@ -2,6 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { promise } from 'selenium-webdriver';
 
+/**
+ *
+ * 定义调用API服务类
+ * @export
+ * @class AsyncService
+ */
 @Injectable()
 export class AsyncService {
     // inject Http Service
