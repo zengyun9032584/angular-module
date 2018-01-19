@@ -1,7 +1,7 @@
 <!-- ngFor过滤 -->
 <!-- <app-filter></app-filter> -->
 <!-- this is title -->
-<div class="container-fluid no-margin">
+<div class="container-fluid no-padding">
     <header class="div-height back-color">
         <div class="col-md-12">
             <div class="col-md-5 div-icon">
@@ -11,19 +11,41 @@
         </div>
     </header>
     <!-- content -->
-    <div>
-        <div class="col-md-3 div-nav back-color">
-            <nav>
-                <ul class="list-group ul-margin">
-                    <a class="list-group-item list-style" routerLink="scroll-load" routerLinkActive="active">Scroll to bottom load content</a>
-                    <a class="list-group-item list-style" routerLink="filter" routerLinkActive="active">Filter</a>
-                    <a class="list-group-item list-style" routerLink="div-bind" routerLinkActive="active">Div two-way bind</a>
-                    <a class="list-group-item list-style" routerLink="async-service" routerLinkActive="active">Async service</a>
-                    <a class="list-group-item list-style" routerLink="time" routerLinkActive="active">Clocke with Observable.timer</a>
-                </ul>
-            </nav>
+    <div class="col-md-12 no-padding">
+        <div *ngIf="!smallScreen" class="div-nav back-color">
+            <ul class="list-group ul-margin">
+                <a class="list-group-item list-style" routerLink="scroll-load" routerLinkActive="active">Scroll to bottom load content</a>
+                <a class="list-group-item list-style" routerLink="filter" routerLinkActive="active">Filter</a>
+                <a class="list-group-item list-style" routerLink="div-bind" routerLinkActive="active">Div two-way bind</a>
+                <a class="list-group-item list-style" routerLink="async-service" routerLinkActive="active">Async service</a>
+                <a class="list-group-item list-style" routerLink="time" routerLinkActive="active">Clocke with Observable.timer</a>
+            </ul>
         </div>
-        <div class="col-md-9 div-route back-color">
+        <div *ngIf="smallScreen" class="div-nav-phone back-color">
+            <ul class="list-group" [ngSwitch]="selectRow">
+                <a *ngSwitchCase="1" class="list-group-item list-style" routerLink="scroll-load" routerLinkActive="active" (touchstart)="touchStart($event)"
+                    (touchend)="touchEnd($event)">
+                    Scroll to bottom load content
+                </a>
+                <a *ngSwitchCase="2" class="list-group-item list-style" routerLink="filter" routerLinkActive="active" (touchstart)="touchStart($event)"
+                    (touchend)="touchEnd($event)">
+                    Filter
+                </a>
+                <a *ngSwitchCase="3" class="list-group-item list-style" routerLink="div-bind" routerLinkActive="active" (touchstart)="touchStart($event)"
+                    (touchend)="touchEnd($event)">
+                    Div two-way bind
+                </a>
+                <a *ngSwitchCase="4" class="list-group-item list-style" routerLink="async-service" routerLinkActive="active" (touchstart)="touchStart($event)"
+                    (touchend)="touchEnd($event)">
+                    Async service
+                </a>
+                <a *ngSwitchCase="5" class="list-group-item list-style" routerLink="time" routerLinkActive="active" (touchstart)="touchStart($event)"
+                    (touchend)="touchEnd($event)">
+                    Clocke with Observable.timer
+                </a>
+            </ul>
+        </div>
+        <div class="back-color" [ngClass]="{'div-route': !smallScreen, 'div-route-phone': smallScreen}">
             <router-outlet></router-outlet>
         </div>
     </div>
